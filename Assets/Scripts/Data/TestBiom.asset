@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba6302b55504cefd847161b98a41ecd, type: 3}
   m_Name: TestBiom
   m_EditorClassIdentifier: 
-  floorTile: []
-  wallTop: []
+  floorTile:
+  - {fileID: 11400000, guid: 3cb304f0c54a10871a4f9627103fca03, type: 2}
+  - {fileID: 11400000, guid: 945223eddd10b8a4a833ce9150f19538, type: 2}
+  wallTop:
+  - {fileID: 11400000, guid: 233b85a41355f4e6bb10c6562cf8c9fb, type: 2}
