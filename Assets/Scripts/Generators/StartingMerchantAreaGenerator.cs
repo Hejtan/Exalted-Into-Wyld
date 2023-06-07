@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartingAreaGenerator : AbstractDungeonGenerator
+public class StartingMerchantAreaGenerator : AbstractDungeonGenerator
 {
     [SerializeField]
     private int size;

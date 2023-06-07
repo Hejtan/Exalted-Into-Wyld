@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public AbstractDungeonGenerator dungeonGenerator;
-    public StartingAreaGenerator startingAreaGenerator;
+    public StartingMerchantAreaGenerator startingAreaGenerator;
     [SerializeField]
     private List<TileBiomeSO> biomy;
     private int merchantFloorCounter = 0;
