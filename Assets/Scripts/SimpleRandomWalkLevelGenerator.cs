@@ -4,33 +4,29 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using System.Linq;
 
-public class SimpleRandomWalkLevelGenerator : MonoBehaviour
+public class SimpleRandomWalkLevelGenerator : AbstractDungeonGenerator
 {
-    [SerializeField]
-    protected Vector2Int startPosition = Vector2Int.zero;
-    [SerializeField]
-    private int iterations = 10;
-    [SerializeField]
-    public int walkLength = 10;
-    [SerializeField]
-    public bool startRandomlyEachIteration = true;
 
     [SerializeField]
-    private TileMapGenerator tileMapGenerator;
+    protected SimpleRandomWalkSO randomWalkParemeters;
 
-    public void RunProceduralGeneration() {
-        HashSet<Vector2Int> floorPositions = RunRandomWalk();
+
+    protected override void RunProceduralGeneration(TileBiomeSO biom = null) {
+        HashSet<Vector2Int> floorPositions = RunRandomWalk(randomWalkParemeters, startPosition);
+        if(biom != null) {
+            tileMapGenerator.ChangeBiom(biom);
+        }
         tileMapGenerator.PaintFloorTiles(floorPositions);
-        
+        WallGenerator.CreateWalls(floorPositions, tileMapGenerator);
     }
 
-    protected HashSet<Vector2Int> RunRandomWalk() {
-        var currentPosition = startPosition;
+    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO randomWalkParemeters, Vector2Int position) {
+        var currentPosition = position;
         HashSet<Vector2Int> floorPositions = new HashSet<Vector2Int>();
-        for(int i=0; i<iterations; i++) {
-            var path = ProceduralGeneration.SimpleRandomWalk(currentPosition, walkLength);
+        for(int i=0; i<randomWalkParemeters.iterations; i++) {
+            var path = ProceduralGeneration.SimpleRandomWalk(currentPosition, randomWalkParemeters.walkLength);
             floorPositions.UnionWith(path);
-            if(startRandomlyEachIteration) {
+            if(randomWalkParemeters.startRandomlyEachIteration) {
                 currentPosition = floorPositions.ElementAt(Random.Range(0, floorPositions.Count));
             }
         }
