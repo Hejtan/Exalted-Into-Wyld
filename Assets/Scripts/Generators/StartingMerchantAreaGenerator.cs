@@ -20,5 +20,6 @@ public class StartingMerchantAreaGenerator : AbstractDungeonGenerator
         }
         tileMapGenerator.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tileMapGenerator);
+        MyGrid.GridGen(floorPositions);
     }
 }

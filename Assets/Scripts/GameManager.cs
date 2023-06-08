@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public AbstractDungeonGenerator dungeonGenerator;
     public StartingMerchantAreaGenerator startingAreaGenerator;
+    public FillStartingArea fillStartingArea;
+
     [SerializeField]
     private List<TileBiomeSO> biomy;
     private int merchantFloorCounter = 0;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     private void generateLevel(bool died) {
         if(died) {
             startingAreaGenerator.GenerateDungeon();
+            fillStartingArea.FillArea(twoPlayerMode);
         } else if(magicKey) {
 
         } else if(merchantFloorCounter == merchantFloorGoal) {

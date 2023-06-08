@@ -34,6 +34,7 @@ public class CorridorFirstDungeonGeneration : SimpleRandomWalkLevelGenerator
 
         tileMapGenerator.PaintFloorTiles(floorPositions);
         WallGenerator.CreateWalls(floorPositions, tileMapGenerator);
+        MyGrid.GridGen(floorPositions);
     }
 
     private void CreateRoomsAtDeadEnds(List<Vector2Int> deadEnds, HashSet<Vector2Int> roomFloors) {
