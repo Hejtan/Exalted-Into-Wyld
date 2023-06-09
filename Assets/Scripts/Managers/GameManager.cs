@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    public GameManager instance;
+    void Awake() {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +57,7 @@ public class GameManager : MonoBehaviour
         } else {
             merchantFloorCounter++;
             if(depth > 0) {
-                player.GainXP(5);
+                PlayerStats.instance.currentXP+=5;
             }
             dungeonGenerator.GenerateDungeon(biomy[Random.Range(0, biomy.Count)]);
         }

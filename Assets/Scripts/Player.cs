@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int currentXP, spentXP, essence, motes;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,5 @@ public class Player : MonoBehaviour
     {
         
     }
-    public void GainXP(int amount) {
-        currentXP += amount;
-    }
+
 }

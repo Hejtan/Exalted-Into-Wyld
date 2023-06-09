@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats
+public class PlayerStats: MonoBehaviour
 {
     public static PlayerStats instance;
     public PlayerStats() {
