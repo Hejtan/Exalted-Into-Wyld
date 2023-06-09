@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public AbstractDungeonGenerator dungeonGenerator;
-    public StartingMerchantAreaGenerator startingAreaGenerator;
-    public FillStartingArea fillStartingArea;
+    [SerializeField]
+    private AbstractDungeonGenerator dungeonGenerator;
+    [SerializeField]
+    private StartingMerchantAreaGenerator startingAreaGenerator;
+    [SerializeField]
+    private FillStartingArea fillStartingArea;
+    [SerializeField]
+    private FillMerchantArea fillMerchantArea;
+    [SerializeField]
+    private FillCombatLevel fillDungeonArea;
+    [SerializeField]
+    private FillFinalBossArea fillFinalBossArea;
 
     [SerializeField]
     private List<TileBiomeSO> biomy;
@@ -14,10 +23,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int merchantFloorGoal = 5;
     private bool magicKey = false;
+    private int depth = 0;
 
-    public Player player1;
-    public Player player2;
-    public bool twoPlayerMode = false;
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -34,15 +42,18 @@ public class GameManager : MonoBehaviour
     private void generateLevel(bool died) {
         if(died) {
             startingAreaGenerator.GenerateDungeon();
-            fillStartingArea.FillArea(twoPlayerMode);
+            fillStartingArea.FillArea();
         } else if(magicKey) {
 
         } else if(merchantFloorCounter == merchantFloorGoal) {
             merchantFloorCounter = 0;
+            startingAreaGenerator.GenerateDungeon();
+            fillMerchantArea.FillArea();
         } else {
             merchantFloorCounter++;
-            player1.GainXP(5);
-            if(twoPlayerMode) player2.GainXP(5);
+            if(depth > 0) {
+                player.GainXP(5);
+            }
             dungeonGenerator.GenerateDungeon(biomy[Random.Range(0, biomy.Count)]);
         }
     }
