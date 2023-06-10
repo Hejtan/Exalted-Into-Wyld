@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07e1e710f16a6a648e3389379645453, type: 3}
+  m_Name: DemonDrinkingFang
+  m_EditorClassIdentifier: 
+  id: 20
+  essenceRequirement: 2
+  attributeRequirement: 3
+  moteCost: 3
+  step: 3
+  charmName: Demon-Drinking Fang
+  description: Increases decisive damage dice by Wits and stops self-healing. Works
+    only on Fae and Spirits.
+  charmType: 1
+  requiredAttribute: 3
+  charmsRequirements:
+  - {fileID: 11400000, guid: fa87996839f2142388fec3bb24975fcb, type: 2}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07e1e710f16a6a648e3389379645453, type: 3}
+  m_Name: CunningPreyReversal
+  m_EditorClassIdentifier: 
+  id: 6
+  essenceRequirement: 3
+  attributeRequirement: 4
+  moteCost: 4
+  step: 2
+  charmName: Cunning Prey Reversal
+  description: Add +1 Evasion against a decisive attack. If the dodge is successful,
+    gain the Initiative the enemy lost
+  charmType: 1
+  requiredAttribute: 1
+  charmsRequirements:
+  - {fileID: 11400000, guid: f2aa2370cf7957bfba944ea06e3571de, type: 2}

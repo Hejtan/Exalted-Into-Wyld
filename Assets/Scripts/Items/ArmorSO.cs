@@ -11,5 +11,16 @@ public class ArmorSO : AbstractItem
     public int soak;
     public int hardness;
     public int mobilityPenalty;
+    public override AbstractItem deepCopy() {
+        ArmorSO copy = new ArmorSO();
+        copy.value = value;
+        copy.itemName = itemName;
+        copy.icon = icon;
+        copy.id = id;
+        copy.soak = soak;
+        copy.hardness = hardness;
+        copy.mobilityPenalty = mobilityPenalty;
+        return copy;
+    }
 
 }

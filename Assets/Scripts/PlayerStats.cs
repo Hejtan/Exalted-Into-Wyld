@@ -17,6 +17,10 @@ public class PlayerStats: MonoBehaviour
 
     public HashSet<AbstractCharm> knownCharms = new HashSet<AbstractCharm>();
 
+    public bool HasCharm(AbstractCharm charm) {
+        return knownCharms.Contains(charm);
+    }
+
     
     public void resetCharacter() {
         essence = 1;

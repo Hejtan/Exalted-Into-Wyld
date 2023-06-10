@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07e1e710f16a6a648e3389379645453, type: 3}
+  m_Name: HuntersEyePrecision
+  m_EditorClassIdentifier: 
+  id: 2
+  essenceRequirement: 2
+  attributeRequirement: 4
+  moteCost: 3
+  step: 0
+  charmName: Hunter's Eye Precision
+  description: Gain benefits of Aim without taking Aim action
+  charmType: 1
+  requiredAttribute: 1
+  charmsRequirements:
+  - {fileID: 11400000, guid: 05cf47edd67f784c1828dc1a883d8e6f, type: 2}

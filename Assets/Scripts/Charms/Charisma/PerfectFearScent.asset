@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07e1e710f16a6a648e3389379645453, type: 3}
+  m_Name: PerfectFearScent
+  m_EditorClassIdentifier: 
+  id: 9
+  essenceRequirement: 2
+  attributeRequirement: 4
+  moteCost: 0
+  step: -1
+  charmName: Perfect Fear Scent
+  description: Enemies suffer -1 Resolve. Enemies that fear you have -2 penalty on
+    attacks.
+  charmType: 2
+  requiredAttribute: 4
+  charmsRequirements:
+  - {fileID: 11400000, guid: 1ba77a65147f2438299fff02478596a2, type: 2}

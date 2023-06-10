@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     public GameManager instance;
     void Awake() {
         instance = this;
+        InventoryManager.instance.resetInventory();
     }
 
     // Start is called before the first frame update
@@ -66,4 +68,6 @@ public class GameManager : MonoBehaviour
     public void finishedLevel() {
         generateLevel(false);
     }
+
+
 }

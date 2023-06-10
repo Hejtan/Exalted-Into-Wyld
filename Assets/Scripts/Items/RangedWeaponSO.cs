@@ -16,4 +16,20 @@ public class RangedWeaponSO : AbstractItem
     public int damage;
     public int overwhelming;
     public int maxRange;
+    public override AbstractItem deepCopy() {
+        RangedWeaponSO copy = new RangedWeaponSO();
+        copy.value = value;
+        copy.itemName = itemName;
+        copy.icon = icon;
+        copy.id = id;
+        copy.accuracyClose = accuracyClose;
+        copy.accuracyShort = accuracyShort;
+        copy.accuracyMedium = accuracyMedium;
+        copy.accuracyLong = accuracyLong;
+        copy.accuracyExtreme = accuracyExtreme;
+        copy.damage = damage;
+        copy.overwhelming = overwhelming;
+        copy.maxRange = maxRange;
+        return copy;
+    }
 }

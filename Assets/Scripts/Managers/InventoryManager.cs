@@ -10,6 +10,10 @@ public class InventoryManager : MonoBehaviour
     public List<AbstractItem> items = new List<AbstractItem>();
     [SerializeField]
     private AbstractItem unarmed;
+    private int weaponEquipped = 0;
+    private int armorEquipped = -1;
+    private int idCounter = 1;
+
 
     public Transform itemContent;
     public GameObject inventoryItemPrefab;
@@ -19,11 +23,16 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void AddItem(AbstractItem item) {
-        items.Add(item);
+        var newitem = item.deepCopy();
+        newitem.id = idCounter++;
+        items.Add(newitem);
     }
     public void resetInventory() {
         items = new List<AbstractItem>();
-        items.Add(unarmed);
+        idCounter = 0;
+        weaponEquipped = 0;
+        armorEquipped = -1;
+        AddItem(unarmed);
     }
     
     public void ListItems() {
@@ -32,8 +41,23 @@ public class InventoryManager : MonoBehaviour
         }
         foreach(var item in items) {
             GameObject itemObject = Instantiate(inventoryItemPrefab, itemContent);
+            itemObject.name = item.id.ToString();
             var itemSprite = item.icon;
             itemObject.transform.Find("Image").GetComponent<Image>().sprite = itemSprite;
+            if (item.id == weaponEquipped || item.id == armorEquipped) {
+                itemObject.GetComponent<Image>().color = Color.cyan;
+            }
         }
+    }
+
+    public void EquipItem(int id) {
+        if (items[id].GetType() == typeof(MeleeWeaponSO) || items[id].GetType() == typeof(RangedWeaponSO)) {
+            weaponEquipped = id;
+            HUDController.instance.logAction("You equipped a weapon.");
+        } else if (items[id].GetType() == typeof(ArmorSO)) {
+            armorEquipped = id;
+            HUDController.instance.logAction("You equipped an armor.");
+        }
+        ListItems();
     }
 }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07e1e710f16a6a648e3389379645453, type: 3}
+  m_Name: OxBodyTechnique5
+  m_EditorClassIdentifier: 
+  id: 25
+  essenceRequirement: 1
+  attributeRequirement: 5
+  moteCost: 0
+  step: -1
+  charmName: Ox-Body Technique 5
+  description: Gain two -2 health levels. At 3 stamina gain extra -4 health level.
+    At 5 stamina gain additional -4 health level.
+  charmType: 2
+  requiredAttribute: 2
+  charmsRequirements:
+  - {fileID: 11400000, guid: b84bca6e9925ffc1a97f6791bebeb58f, type: 2}

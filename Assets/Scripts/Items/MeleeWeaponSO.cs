@@ -12,4 +12,16 @@ public class MeleeWeaponSO : AbstractItem
     public int damage;
     public int defenseBonus;
     public int overwhelming;
+    public override AbstractItem deepCopy() {
+        MeleeWeaponSO copy = new MeleeWeaponSO();
+        copy.value = value;
+        copy.itemName = itemName;
+        copy.icon = icon;
+        copy.id = id;
+        copy.accuracy = accuracy;
+        copy.damage = damage;
+        copy.defenseBonus = defenseBonus;
+        copy.overwhelming = overwhelming;
+        return copy;
+    }
 }
